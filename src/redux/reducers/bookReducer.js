@@ -15,7 +15,7 @@ const initialState = {
   ],
 };
 
-export const bookReducer = (state, {type, payload}) => {
+export const bookReducer = (state = initialState, {type, payload}) => {
   switch(type) {
     case ActionTypes.SET_BOOK_DATA:
       return state;
