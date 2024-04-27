@@ -1,0 +1,24 @@
+.nav-bar {
+  box-shadow: 0 4px 6px -6px #222;
+  height: 62px;
+}
+
+.nav-bar-contents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.link {
+  text-decoration: none;
+  color: #111;
+}
+
+.add-new-book {
+  color: #111;
+  text-decoration: none;
+}
