@@ -1,6 +1,8 @@
 import { ActionTypes } from "../constants/action-types";
 
 export const setBookData = (book) => {
+
+  // this object will be taken by the reducer
   return {
     type: ActionTypes.SET_BOOK_DATA,
     payload: book,
