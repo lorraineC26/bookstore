@@ -1,6 +1,7 @@
 .nav-bar {
   box-shadow: 0 4px 6px -6px #222;
   height: 62px;
+  padding-bottom: 10px;
 }
 
 .nav-bar-contents {

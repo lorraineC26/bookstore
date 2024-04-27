@@ -1,15 +1,19 @@
 import './App.css';
+import { BrowserRouter as Router } from "react-router-dom";
+
 import NavBar from './components/NavBar';
-import { BrowserRouter } from "react-router-dom";
+import BookList from './components/BookList';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
+    <div className="App">
+      <Router>
         <NavBar />
 
-      </div>
-    </BrowserRouter>
+        <BookList />
+
+      </Router>
+    </div>
   );
 }
 
