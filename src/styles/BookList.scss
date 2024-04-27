@@ -1,0 +1,18 @@
+@mixin grid-container {
+  display: grid;
+  gap: 25px;
+}
+
+@mixin responsive-grid-layout {
+  @include grid-container;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); // create as many cols as possible and keep the wide at least 200px
+  
+  @media (max-width: 768px) { 
+    grid-template-columns: 1fr; // Switch to one column layout on smaller screens
+  }
+}
+
+.book-list-container {
+  @include responsive-grid-layout;
+  padding-top: 1.5rem;
+}

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setBookData } from "../redux/actions/bookActions";
+import '../styles/BookList.scss'
 
 import BookListItem from "./BookListItem";
 import bookData from "../mock/books"
@@ -20,7 +21,7 @@ const BookList = () => {
   console.log("Books:", books);
 
   return (
-    <div className="ui grid container">
+    <div className="book-list-container">
       <BookListItem /> 
     </div>
 
