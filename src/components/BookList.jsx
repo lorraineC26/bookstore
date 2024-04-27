@@ -17,8 +17,6 @@ const BookList = () => {
   useEffect(() => {
     fetchBooks();
   }, []);
-  
-  console.log("Books:", books);
 
   return (
     <div className="book-list-container">

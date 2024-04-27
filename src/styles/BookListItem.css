@@ -1,0 +1,42 @@
+.book-list-item {
+  display: flex;
+  justify-content: center;
+}
+
+.book-card {
+  margin: 11px;
+  padding: 8px;
+  max-width: fit-content;
+}
+
+.book-cover {
+  display: flex;
+  justify-content: center;
+}
+.book-cover img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+}
+.book-info .title {
+  margin-top: 5px;
+  font-weight: 700;
+  font-size: 15px;
+  margin-left: 8px;
+  font-style: italic;
+  text-align: center;
+}
+.book-info .price {
+  font-weight: 300;
+  color: brown;
+}
+.book-info .category {
+  color: grey;
+}

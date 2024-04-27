@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import "../styles/BookListItem.scss";
 
 
 const BookListItem = () => {
@@ -9,23 +10,20 @@ const BookListItem = () => {
     const {id, title, price, category, image, description} = book;
 
     return (
-      <div className="five column wide">
-        <div className="ui link cards">
-
-          <div className="card">
-            <div className="image">
+        <div className="book-list-item" >
+          <div className="book-card">
+            <div className="book-cover">
               <img src={image} alt={title} />
             </div>
 
-            <div className="content">
-              <div className="header">{title}</div>
-              <div className="meta price">${price}</div>
-              <div className="meta">{category}</div>
+            <div className="book-info">
+              <div className="title">{title}</div>
+              <div className="price">${price}</div>
+              <div className="category">{category}</div>
             </div>
           </div>
 
         </div>
-      </div>
     )
   })
 
