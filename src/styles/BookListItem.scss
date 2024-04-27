@@ -11,6 +11,20 @@
   // border-style: solid;
   // border-radius: 8px;
   max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  gap:5px
+}
+
+button {
+  color: #111;
+  background-color: #f582ae;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 6px -6px #222;
 }
 
 .book-cover {

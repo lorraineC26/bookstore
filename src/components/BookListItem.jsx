@@ -21,7 +21,10 @@ const BookListItem = () => {
               <div className="price">${price}</div>
               <div className="category">{category}</div>
             </div>
+
+            <button>Delete</button>
           </div>
+
 
         </div>
     )
