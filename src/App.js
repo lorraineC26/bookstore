@@ -9,7 +9,6 @@ function App() {
     <div className="App">
       <Router>
         <NavBar />
-
         <BookList />
 
       </Router>
