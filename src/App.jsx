@@ -13,7 +13,7 @@ function App() {
         <BookList />
 
         {/* will be using a state to control whether the modal is open */}
-        <BookDetailsModal />
+        {/* <BookDetailsModal /> */}
 
       </Router>
     </div>

@@ -2,8 +2,16 @@ import React from "react";
 
 import '../styles/BookDetails.scss';
 import closeSymbol from '../assets/closeSymbol.svg';
+import { useDispatch } from "react-redux";
+import { selectedBook } from "../redux/actions/bookActions";
 
 const BookDetailsModal = () => {
+
+  const dispatch = useDispatch();
+
+  dispatch(selectedBook());
+
+
   return (
     <div className="book-details-container">
       <button

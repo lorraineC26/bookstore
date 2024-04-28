@@ -1,21 +1,23 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "../styles/BookListItem.scss";
+
+import { selectedBook } from "../redux/actions/bookActions";
 
 
 const BookListItem = () => {
   const books = useSelector((state) => state.allBooks.books);
+  const dispatch = useDispatch();
 
   const renderList = books.map((book) => {
     const {id, title, price, category, image, description} = book;
+    
+    const handleClickModalOpen = (book) => {dispatch(selectedBook(book));};
 
     return (
       <div className="book-list-item" key={id}>
         <div className="book-card">
-          <div
-            className="book-cover"
-            // onClick={() => handleClickOpenModal(book)}
-          >
+          <div className="book-cover" onClick={() => handleClickModalOpen(book)}>
             <img src={image} alt={title} />
           </div>
 
