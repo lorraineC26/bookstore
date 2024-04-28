@@ -10,24 +10,25 @@ const BookListItem = () => {
     const {id, title, price, category, image, description} = book;
 
     return (
-        <div className="book-list-item" >
-          <div className="book-card">
-            <div className="book-cover">
-              <img src={image} alt={title} />
-            </div>
-
-            <div className="book-info">
-              <div className="title">{title}</div>
-              <div className="price">${price}</div>
-              <div className="category">{category}</div>
-            </div>
-
-            <button>Delete</button>
+      <div className="book-list-item" key={id}>
+        <div className="book-card">
+          <div
+            className="book-cover"
+            // onClick={() => handleClickOpenModal(book)}
+          >
+            <img src={image} alt={title} />
           </div>
 
+          <div className="book-info">
+            <div className="title">{title}</div>
+            <div className="price">${price}</div>
+            <div className="category">{category}</div>
+          </div>
 
+          <button className="delete">Delete</button>
         </div>
-    )
+      </div>
+    );
   })
 
   return (

@@ -1,12 +1,12 @@
 .nav-bar {
   box-shadow: 0 4px 6px -6px #222;
   height: 62px;
-  width: 95%;
+  width: 100%;
   padding-bottom: 10px;
   position: fixed;
   top: 0;
   z-index: 1000;
-  background-color: #fff;
+  background-color: #fef6e4;
 }
 
 .nav-bar-contents {
@@ -18,6 +18,8 @@
   font-weight: 500;
   font-size: 1.4rem;
   height: 100%;
+  margin-left: 1rem;
+  margin-right: 1rem;
 
   .link {
     img{
