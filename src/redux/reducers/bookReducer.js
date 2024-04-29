@@ -3,7 +3,7 @@ import { ActionTypes } from "../constants/action-types";
 const initialState = {
   books:[],
   selectedBook:null,
-  isModalOpen:false,
+  isBookModalOpen:false,
 };
 
 export const bookReducer = (state = initialState, {type, payload}) => {
@@ -16,14 +16,14 @@ export const bookReducer = (state = initialState, {type, payload}) => {
     case ActionTypes.SELECTED_BOOK:
       return {
         ...state,
-        isModalOpen:true,
+        isBookModalOpen:true,
         selectedBook: payload
       }
     
     case ActionTypes.REMOVE_SELECTED_BOOK:
       return {
         ...state,
-        isModalOpen: false,
+        isBookModalOpen: false,
         selectedBook: null
       }
 

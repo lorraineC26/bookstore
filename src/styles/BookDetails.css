@@ -1,11 +1,11 @@
 .book-details-container {
   background-color: white;
   box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 55%;
+  position: fixed;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -40%);
-  height: 70%;
+  height: max-content;
   width: 55%;
   overflow-y: scroll;
   border-radius: 12px;
@@ -27,11 +27,47 @@
 .book-details-card {
   margin-left: 36px;
   margin-top: 8px;
+  gap: 5px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
 }
 .book-details-card .book-details-image {
   max-width: 40%;
   border-radius: 8px;
+}
+.book-details-card .book-details-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-right: 1rem;
+}
+.book-details-card .book-details-info .title {
+  margin-top: 5px;
+  font-weight: 700;
+  margin-left: 8px;
+  font-style: italic;
+  text-align: center;
+}
+.book-details-card .book-details-info .price {
+  font-weight: 300;
+  color: brown;
+}
+.book-details-card .book-details-info .category {
+  color: grey;
+}
+.book-details-card .book-details-info .description {
+  text-align: left;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .book-details-info {
+    font-size: 10px;
+  }
+  .book-details-info .title {
+    font-size: 10px;
+  }
 }

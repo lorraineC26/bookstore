@@ -8,7 +8,7 @@ import BookDetailsModal from './components/BookDetailsModal';
 
 function App() {
 
-  const bookModalState = useSelector((state) => state.allBooks.isModalOpen);
+  const bookModalState = useSelector((state) => state.allBooks.isBookModalOpen);
 
   return (
     <div className="App">

@@ -29,10 +29,10 @@ const BookDetailsModal = () => {
         />
 
         <section className="book-details-info">
-          <div>{title}</div>
-          <div>{price}</div>
-          <div>{category}</div>
-          <div>{description}</div>
+          <div className="title">{title}</div>
+          <div className="price">{price}</div>
+          <div className="category">{category}</div>
+          <div className="description">{description}</div>
         </section>
       </div>
     </div>
