@@ -1,0 +1,13 @@
+.add-book-modal{
+  background-color: white;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  height: max-content;
+  width: 55%;
+  overflow-y: scroll;
+  border-radius: 12px;
+}
+

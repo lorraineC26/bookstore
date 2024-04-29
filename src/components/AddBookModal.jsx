@@ -1,11 +1,10 @@
 import { React, useState } from "react";
 import { useDispatch } from "react-redux";
+import { addBook } from "../redux/actions/bookActions";
 
 import "../styles/AddBookModal.scss";
 import closeSymbol from "../assets/closeSymbol.svg";
 import defaultCover from "../assets/defaultCover.png"
-import { addBook } from "../redux/actions/bookActions";
-import {  } from "../redux/actions/bookActions";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -41,49 +40,56 @@ const AddBookModal = () => {
 
   return (
     <div className="add-book-modal">
-
-      <button className="book-details__close-button" >
+      <button className="book-details__close-button">
         <img src={closeSymbol} alt="close symbol" />
       </button>
 
-      <h2>Add a New Book</h2>
+      <div className="book-details-card">
+        <h2>Add a New Book</h2>
 
-      <img src={defaultCover} alt="defalut cover" />
-
-      <form onSubmit={handleAddBook}>
-        <label>Title:</label>
-        <input
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
+        <img
+          src={defaultCover}
+          alt="defalut cover"
+          className="book-details-image"
         />
 
-        <label>Price:</label>
-        <input
-          type="number"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-          required
-        />
+        <form className="edit-form" onSubmit={handleAddBook}>
+          <label>Title:</label>
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
 
-        <label>Category:</label>
-        <input
-          type="text"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          required
-        />
+          <label>Price:</label>
+          <input
+            type="number"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            required
+          />
 
-        <label>Description:</label>
-        <textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          required
-        ></textarea>
+          <label>Category:</label>
+          <input
+            type="text"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            required
+          />
 
-        <button type="submit">Add Book</button>
-      </form>
+          <label>Description:</label>
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          ></textarea>
+
+          <button type="submit" className="submit">
+            Add Book
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

@@ -62,7 +62,6 @@ export const bookReducer = (state = initialState, {type, payload}) => {
     case ActionTypes.ADD_BOOK:
       return {
         ...state,
-        isAddBookModalOpen: true,
         books:[...state.books, payload]
       }
 
