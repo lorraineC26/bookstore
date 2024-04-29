@@ -1,8 +1,8 @@
 .book-details-container {
   background-color: white;
-  box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 45%;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 56%;
   left: 50%;
   transform: translate(-50%, -40%);
   height: max-content;
@@ -84,11 +84,56 @@
   padding-bottom: 1rem;
 }
 
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 1rem;
+  padding-right: 1.5rem;
+}
+.edit-form span {
+  font-size: 16px;
+  font-style: italic;
+}
+.edit-form input {
+  font-size: 16px;
+  width: 100%;
+  height: max-content;
+}
+.edit-form textarea {
+  font-size: 16px;
+  width: 22rem;
+  height: 6rem;
+}
+.edit-form .submit {
+  color: #111;
+  background-color: #f3d2c1;
+  border-radius: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px -6px #222;
+  border-color: #f3d2c1;
+  border-style: none;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .book-details-info {
     font-size: 10px;
   }
   .book-details-info .title {
     font-size: 10px;
+  }
+  .edit-form span {
+    font-size: 12px;
+  }
+  .edit-form input {
+    font-size: 10px;
+  }
+  .edit-form textarea {
+    font-size: 10px;
+    width: 100%;
   }
 }

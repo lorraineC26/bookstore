@@ -44,9 +44,12 @@ const BookDetailsModal = () => {
         <button className="book-details__close-button" onClick={handClickClose}>
           <img src={closeSymbol} alt="close symbol" />
         </button>
-        <button className="book-details__edit-button" onClick={handleEditOn}>
-          Edit
-        </button>
+
+        {!isEditOn &&
+          <button className="book-details__edit-button" onClick={handleEditOn}>
+            Edit
+          </button>
+        }
       </div>
 
       <div className="book-details-card">
@@ -63,7 +66,7 @@ const BookDetailsModal = () => {
 
 
         {isEditOn &&
-          <form>
+          <form className="edit-form">
             <span>Title:</span>
             <input
               type="text"
@@ -95,7 +98,7 @@ const BookDetailsModal = () => {
               onChange={handleEditChange}
             />
 
-            <button type="submit">Save Changes</button>
+            <button type="submit" className="submit">Save Changes</button>
           </form>
         }
       </div>
