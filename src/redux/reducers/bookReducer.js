@@ -65,6 +65,12 @@ export const bookReducer = (state = initialState, {type, payload}) => {
         books:[...state.books, payload]
       }
 
+    case ActionTypes.CLOSE_ADD_BOOK_MODAL:
+      return {
+        ...state,
+        isAddBookModalOpen: false
+      }
+
     default:
       return state;
   }

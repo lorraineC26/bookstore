@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addBook } from "../redux/actions/bookActions";
+import { addBook, closeAddBookModal } from "../redux/actions/bookActions";
 
 import "../styles/AddBookModal.scss";
 import closeSymbol from "../assets/closeSymbol.svg";
@@ -36,11 +36,15 @@ const AddBookModal = () => {
     setDescription("");
   };
 
+  const handleClickClose = () => {
+    dispatch(closeAddBookModal());
+  }
+
 
 
   return (
     <div className="add-book-modal">
-      <button className="book-details__close-button">
+      <button className="book-details__close-button" onClick={handleClickClose}>
         <img src={closeSymbol} alt="close symbol" />
       </button>
 

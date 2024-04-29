@@ -48,3 +48,9 @@ export const addBook = (newBook) => {
   }
 }
 
+export const closeAddBookModal = () => {
+  return {
+    type: ActionTypes.CLOSE_ADD_BOOK_MODAL,
+  }
+}
+
