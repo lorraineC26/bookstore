@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import NavBar from './components/NavBar';
 import BookList from './components/BookList';
 import BookDetailsModal from './components/BookDetailsModal';
+import AddBookModal from './components/AddBookModal';
 
 function App() {
 
@@ -20,6 +21,8 @@ function App() {
         {bookModalState &&
           <BookDetailsModal />
         }
+
+        <AddBookModal />
 
       </Router>
     </div>

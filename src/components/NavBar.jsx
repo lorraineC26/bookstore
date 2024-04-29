@@ -15,11 +15,10 @@ const NavBar = () => {
           }}
         >
           <img src={logo} alt="logo"/>
-          {/* <p>A Little Bookstore</p> */}
         </Link>
 
         {/* will link to a popup page later for adding new book */}
-        <a href="#" className="add-new-book">Add Book</a>
+        <button className="add-new-book">Add Book</button>
       </div>
 
     </nav>

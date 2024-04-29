@@ -72,7 +72,7 @@ const BookDetailsModal = () => {
 
         {isEditOn && (
           <form className="edit-form" onSubmit={handleEditSubmit}>
-            <span>Title:</span>
+            <label>Title:</label>
             <input
               type="text"
               name="title"
@@ -80,7 +80,7 @@ const BookDetailsModal = () => {
               onChange={handleEditChange}
             />
 
-            <span>Price:</span>
+            <label>Price:</label>
             <input
               type="text"
               name="price"
@@ -88,7 +88,7 @@ const BookDetailsModal = () => {
               onChange={handleEditChange}
             />
 
-            <span>Category:</span>
+            <label>Category:</label>
             <input
               type="text"
               name="category"
@@ -96,7 +96,7 @@ const BookDetailsModal = () => {
               onChange={handleEditChange}
             />
 
-            <span>Description:</span>
+            <label>Description:</label>
             <textarea
               name="description"
               value={editedBook.description}

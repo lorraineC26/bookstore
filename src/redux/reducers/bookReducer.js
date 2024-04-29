@@ -52,6 +52,12 @@ export const bookReducer = (state = initialState, {type, payload}) => {
         books: state.books.filter((book) => book.id !== payload),
       };
 
+    case ActionTypes.ADD_BOOK:
+      return {
+        ...state,
+        books:[...state.books, payload]
+      }
+
     default:
       return state;
   }

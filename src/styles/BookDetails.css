@@ -91,7 +91,7 @@
   padding-bottom: 1rem;
   padding-right: 1.5rem;
 }
-.edit-form span {
+.edit-form label {
   font-size: 16px;
   font-style: italic;
 }
@@ -125,7 +125,7 @@
   .book-details-info .title {
     font-size: 10px;
   }
-  .edit-form span {
+  .edit-form label {
     font-size: 12px;
   }
   .edit-form input {

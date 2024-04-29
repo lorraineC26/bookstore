@@ -1,4 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
 import { ActionTypes } from "../constants/action-types";
 
 export const setBookData = (book) => {
@@ -36,4 +35,10 @@ export const deleteBook = (bookID) => {
   };
 }
 
+export const addBook = (newBook) => {
+  return {
+    type: ActionTypes.ADD_BOOK,
+    payload: newBook
+  }
+}
 
