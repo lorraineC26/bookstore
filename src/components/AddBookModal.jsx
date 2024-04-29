@@ -29,6 +29,7 @@ const AddBookModal = () => {
       price,
       category,
       description,
+      image: defaultCover,
     };
 
     dispatch(addBook(newBook));
