@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState} from "react";
 
 import "../styles/BookDetails.scss";
 import closeSymbol from "../assets/closeSymbol.svg";
@@ -11,29 +11,93 @@ const BookDetailsModal = () => {
 
   const dispatch = useDispatch();
 
+  // control if the edit form is hidden
+  const [isEditOn, setIsEdit] = useState(false);
+
+  // to track edited book details
+  const [editedBook, setEditedBook] = useState(selectedBook);
+
+  // to close the popup
   const handClickClose = () => {
     dispatch(removeSelectedBook());
   };
 
+  // turn on edit mode
+  const handleEditOn = () => {
+    setIsEdit(true)
+  }
+
+  // watch book modifications
+  const handleEditChange = (e) => {
+    setEditedBook({
+      ...editedBook,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+
+
+
   return (
     <div className="book-details-container">
-      <button className="book-details__close-button" onClick={handClickClose}>
-        <img src={closeSymbol} alt="close symbol" />
-      </button>
+      <div className="book-details-buttons">
+        <button className="book-details__close-button" onClick={handClickClose}>
+          <img src={closeSymbol} alt="close symbol" />
+        </button>
+        <button className="book-details__edit-button" onClick={handleEditOn}>
+          Edit
+        </button>
+      </div>
 
       <div className="book-details-card">
-        <img
-          className="book-details-image"
-          src={image}
-          alt="cover image"
-        />
+        <img className="book-details-image" src={image} alt="cover image" />
 
-        <section className="book-details-info">
-          <div className="title">{title}</div>
-          <div className="price">{price}</div>
-          <div className="category">{category}</div>
-          <div className="description">{description}</div>
-        </section>
+        {!isEditOn &&
+          <section className="book-details-info">
+            <div className="title">{title}</div>
+            <div className="price">{price}</div>
+            <div className="category">{category}</div>
+            <div className="description">{description}</div>
+          </section>
+        }
+
+
+        {isEditOn &&
+          <form>
+            <span>Title:</span>
+            <input
+              type="text"
+              name="title"
+              value={editedBook.title}
+              onChange={handleEditChange}
+            />
+
+            <span>Price:</span>
+            <input
+              type="text"
+              name="price"
+              value={editedBook.price}
+              onChange={handleEditChange}
+            />
+
+            <span>Category:</span>
+            <input
+              type="text"
+              name="category"
+              value={editedBook.category}
+              onChange={handleEditChange}
+            />
+
+            <span>Description:</span>
+            <textarea
+              name="description"
+              value={editedBook.description}
+              onChange={handleEditChange}
+            />
+
+            <button type="submit">Save Changes</button>
+          </form>
+        }
       </div>
     </div>
   );

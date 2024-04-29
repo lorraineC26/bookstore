@@ -1,6 +1,6 @@
-.book-details-container{
+.book-details-container {
   background-color: white;
-  box-shadow: 0 0 0 50vmax rgba(0,0,0,.5);
+  box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 45%;
   left: 50%;
@@ -9,6 +9,14 @@
   width: 55%;
   overflow-y: scroll;
   border-radius: 12px;
+}
+
+.book-details-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .book-details__close-button {
@@ -24,6 +32,19 @@
   margin-top: 16px;
 }
 
+.book-details__edit-button {
+  color: #111;
+  background-color: #f3d2c1;
+  border-radius: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px -6px #222;
+  border-color: #f3d2c1;
+  border-style:none;
+  margin-top: 5px;
+}
+
 .book-details-card {
   margin-left: 36px;
   margin-top: 8px;
@@ -32,18 +53,18 @@
   flex-direction: column;
   align-items: center;
 
-  .book-details-image{
+  .book-details-image {
     max-width: 40%;
     border-radius: 8px;
   }
 
-  .book-details-info{
+  .book-details-info {
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding-right: 1rem;
-    
+
     .title {
       margin-top: 5px;
       font-weight: 700;
@@ -58,27 +79,22 @@
     }
 
     .category {
-      color: grey
+      color: grey;
     }
 
-    .description{
+    .description {
       text-align: left;
       padding-right: 1rem;
       padding-bottom: 1rem;
-
-    }  
+    }
   }
 }
 
 @media (max-width: 768px) {
-  .book-details-info{
-    .title{
+  .book-details-info {
+    .title {
       font-size: 10px;
     }
     font-size: 10px;
   }
 }
-
-
-
-

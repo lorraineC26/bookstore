@@ -26,6 +26,12 @@ export const bookReducer = (state = initialState, {type, payload}) => {
         isBookModalOpen: false,
         selectedBook: null
       }
+    
+    case ActionTypes.EDIT_SELECTED_BOOK:
+      return {
+        ...state,
+        
+      }
 
     default:
       return state;
