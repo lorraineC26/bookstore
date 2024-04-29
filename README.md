@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# aLittleBookstore
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a single-page application developed as a frontend developer test for Blazesoft. It utilizes React with Redux and Hooks, along with Next.js for Server Side Rendering, and SCSS for styling.<br/>
 
-## Available Scripts
+## 🚨 Project Migration
+This project was created with `create-react-app` and has already been migrated to my anothr repo using `Next.js` to fulfill the requirement of server-side rendering. <a href="https://github.com/lorraineC26/bookstore-nextjs-migration">You can check the new project here.</a>
 
-In the project directory, you can run:
+The new project is deployed and accessible at: [https://bookstore-nextjs-migration.vercel.app/](https://bookstore-nextjs-migration.vercel.app/).<br/>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone this repository to your local machine.
+2. Install dependencies using `npm install`.
+3. Run the development server using `npm start`.
+4. Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+### 0. Logo Navigation
+- Clicking the logo at the top left corner of the page takes the user back to the top of the page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Book List
+- The main page displays a list of books, each showing the book name, price, category, a delete button, and an image cover.
+- Users can add a new book by clicking the `Add Book button` at the top.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="center">
+  <img src="https://github.com/lorraineC26/bookstore-nextjs-migration/blob/main/public/02-main-page.png?raw=true" alt="Book List" width="400px" style="display: block; margin: 0 auto;">
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Add Book
+- Clicking the `Add Book button` opens a `popup page` allowing users to add a new book.
+- Users can input the book's name, price, category, description; a default image cover is provided.
+- After submition, the new book are updated in the main page
 
-### `npm run eject`
+<p align="center">
+  <img src="https://github.com/lorraineC26/bookstore-nextjs-migration/blob/main/public/05-add-new-book.png?raw=true" alt="add new book" width="400px" style="display: block; margin: 0 auto;">
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p align="center">
+  <img src="https://github.com/lorraineC26/bookstore-nextjs-migration/blob/main/public/06-new-book.png?raw=true" alt="updated main page" width="400px" style="display: block; margin: 0 auto;">
+</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3. Modify Book Details
+- Clicking on a book in the list opens a popup page where users can modify the book's details.
+- Users can edit the book's name, price, category and description.
+- After modification, the book details are updated in the main page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p align="center">
+  <img src="https://github.com/lorraineC26/bookstore-nextjs-migration/blob/main/public/03-book-details-popup.png?raw=true" alt="edit book" width="400px" style="display: block; margin: 0 auto;">
+</p>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 4. Delete Book
+- Each book entry in the list has a delete button.
+- Clicking the delete button removes the book from the main page.
+- An "empty message" wil show up when all books are deleted.
 
-## Learn More
+<p align="center">
+  <img src="https://github.com/lorraineC26/bookstore-nextjs-migration/blob/main/public/01-empty-message.png?raw=true" alt="empty booklist msg" width="400px" style="display: block; margin: 0 auto;">
+</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Responsive Design
+- The application has a responsive design that adapts to both larger and smaller screens, providing an optimal viewing experience across devices.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="center">
+  <img src="https://github.com/lorraineC26/bookstore-nextjs-migration/blob/main/public/07-responsive-design.png?raw=true" alt="responsive deisgn" width="200px" style="display: block; margin: 0 auto;">
+</p>
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
