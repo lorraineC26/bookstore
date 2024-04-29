@@ -10,7 +10,7 @@ const BookListItem = () => {
   const dispatch = useDispatch();
 
   const renderList = books.map((book) => {
-    const {id, title, price, category, image, description} = book;
+    const { id, title, price, category, image } = book;
     
     const handleClickModalOpen = (book) => {dispatch(selectedBook(book));};
 

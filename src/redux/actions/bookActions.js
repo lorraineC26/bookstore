@@ -16,4 +16,10 @@ export const selectedBook = (book) => {
   };
 };
 
+export const removeSelectedBook = () => {
+  return {
+    type: ActionTypes.REMOVE_SELECTED_BOOK
+  }
+}
+
 
