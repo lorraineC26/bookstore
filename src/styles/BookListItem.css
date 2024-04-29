@@ -1,3 +1,9 @@
+.empty-message {
+  text-align: center;
+  width: 100vw;
+  font-size: 2rem;
+}
+
 .book-list-item {
   display: flex;
   justify-content: center;
