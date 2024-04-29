@@ -35,6 +35,12 @@ export const deleteBook = (bookID) => {
   };
 }
 
+export const openAddBookModal = () => {
+  return {
+    type: ActionTypes.OPEN_ADD_BOOK_MODAL,
+  }
+}
+
 export const addBook = (newBook) => {
   return {
     type: ActionTypes.ADD_BOOK,

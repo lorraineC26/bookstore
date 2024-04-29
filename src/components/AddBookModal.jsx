@@ -1,10 +1,12 @@
 import { React, useState } from "react";
+import { useDispatch } from "react-redux";
 
 import "../styles/AddBookModal.scss";
 import closeSymbol from "../assets/closeSymbol.svg";
 import defaultCover from "../assets/defaultCover.png"
 import { addBook } from "../redux/actions/bookActions";
-import { useDispatch } from "react-redux";
+import {  } from "../redux/actions/bookActions";
+
 import { v4 as uuidv4 } from "uuid";
 
 const AddBookModal = () => {
@@ -33,15 +35,17 @@ const AddBookModal = () => {
     setPrice("");
     setCategory("");
     setDescription("");
-
-    // close the modal
-
-    
   };
+
 
 
   return (
     <div className="add-book-modal">
+
+      <button className="book-details__close-button" >
+        <img src={closeSymbol} alt="close symbol" />
+      </button>
+
       <h2>Add a New Book</h2>
 
       <img src={defaultCover} alt="defalut cover" />

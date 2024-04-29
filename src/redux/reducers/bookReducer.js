@@ -4,6 +4,7 @@ const initialState = {
   books:[],
   selectedBook:null,
   isBookModalOpen:false,
+  isAddBookModalOpen:false
 };
 
 export const bookReducer = (state = initialState, {type, payload}) => {
@@ -52,9 +53,16 @@ export const bookReducer = (state = initialState, {type, payload}) => {
         books: state.books.filter((book) => book.id !== payload),
       };
 
+    case ActionTypes.OPEN_ADD_BOOK_MODAL:
+      return {
+        ...state,
+        isAddBookModalOpen: true
+      }
+
     case ActionTypes.ADD_BOOK:
       return {
         ...state,
+        isAddBookModalOpen: true,
         books:[...state.books, payload]
       }
 

@@ -1,9 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { openAddBookModal } from "../redux/actions/bookActions";
+
 import '../styles/NavBar.scss';
 import logo from '../assets/logo.png';
 
 const NavBar = () => {
+  const dispatch = useDispatch();
+  const handleClickOpen = () => {dispatch(openAddBookModal());}
+
   return (
     <nav className="nav-bar">
       <div className="nav-bar-contents">
@@ -17,8 +24,7 @@ const NavBar = () => {
           <img src={logo} alt="logo"/>
         </Link>
 
-        {/* will link to a popup page later for adding new book */}
-        <button className="add-new-book">Add Book</button>
+        <button className="add-new-book" onClick={()=> handleClickOpen()}>Add Book</button>
       </div>
 
     </nav>
