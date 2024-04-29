@@ -3,7 +3,10 @@ import {React, useState} from "react";
 import "../styles/BookDetails.scss";
 import closeSymbol from "../assets/closeSymbol.svg";
 import { useSelector, useDispatch } from "react-redux";
-import { removeSelectedBook } from "../redux/actions/bookActions";
+import {
+  removeSelectedBook,
+  editSelectedBook,
+} from "../redux/actions/bookActions";
 
 const BookDetailsModal = () => {
   const selectedBook = useSelector((state) => state.allBooks.selectedBook);
@@ -17,7 +20,7 @@ const BookDetailsModal = () => {
   // to track edited book details
   const [editedBook, setEditedBook] = useState(selectedBook);
 
-  // to close the popup
+  // to close the popup, clean off `selectedBook state in redux`
   const handClickClose = () => {
     dispatch(removeSelectedBook());
   };
@@ -27,7 +30,7 @@ const BookDetailsModal = () => {
     setIsEdit(true)
   }
 
-  // watch book modifications
+  // watch book editing modifications
   const handleEditChange = (e) => {
     setEditedBook({
       ...editedBook,
@@ -35,7 +38,10 @@ const BookDetailsModal = () => {
     });
   };
 
-
+  const handleEditSubmit = () => {
+    dispatch(editSelectedBook(editedBook));
+    handClickClose();
+  }
 
 
   return (
@@ -45,28 +51,27 @@ const BookDetailsModal = () => {
           <img src={closeSymbol} alt="close symbol" />
         </button>
 
-        {!isEditOn &&
+        {!isEditOn && (
           <button className="book-details__edit-button" onClick={handleEditOn}>
             Edit
           </button>
-        }
+        )}
       </div>
 
       <div className="book-details-card">
         <img className="book-details-image" src={image} alt="cover image" />
 
-        {!isEditOn &&
+        {!isEditOn && (
           <section className="book-details-info">
             <div className="title">{title}</div>
             <div className="price">{price}</div>
             <div className="category">{category}</div>
             <div className="description">{description}</div>
           </section>
-        }
+        )}
 
-
-        {isEditOn &&
-          <form className="edit-form">
+        {isEditOn && (
+          <form className="edit-form" onSubmit={handleEditSubmit}>
             <span>Title:</span>
             <input
               type="text"
@@ -98,9 +103,11 @@ const BookDetailsModal = () => {
               onChange={handleEditChange}
             />
 
-            <button type="submit" className="submit">Save Changes</button>
+            <button type="submit" className="submit">
+              Save Changes
+            </button>
           </form>
-        }
+        )}
       </div>
     </div>
   );

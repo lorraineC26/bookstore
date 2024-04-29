@@ -21,11 +21,11 @@ export const removeSelectedBook = () => {
   }
 }
 
-export const editSelectedBook = (book) => {
+export const editSelectedBook = (editBook) => {
   return {
     type: ActionTypes.EDIT_SELECTED_BOOK,
-    payload: book
-  }
+    payload: editBook,
+  };
 }
 
 

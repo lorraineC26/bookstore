@@ -1,3 +1,4 @@
+import { selectedBook } from "../actions/bookActions";
 import { ActionTypes } from "../constants/action-types";
 
 const initialState = {
@@ -30,8 +31,21 @@ export const bookReducer = (state = initialState, {type, payload}) => {
     case ActionTypes.EDIT_SELECTED_BOOK:
       return {
         ...state,
-        
-      }
+
+        // update the book info in the books array that shows on the main page
+        books: state.books.map((book) => {
+          if (book.id == payload.id) {
+            return {
+              ...book,
+              ...payload,
+            };
+          }
+          return book;
+        }),
+
+        // Update the selectedBook with the edited book
+        selectedBook: payload
+      };
 
     default:
       return state;
