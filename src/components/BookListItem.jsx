@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "../styles/BookListItem.scss";
 
-import { selectedBook } from "../redux/actions/bookActions";
+import { selectedBook, deleteBook } from "../redux/actions/bookActions";
 
 
 const BookListItem = () => {
@@ -13,6 +13,8 @@ const BookListItem = () => {
     const { id, title, price, category, image } = book;
     
     const handleClickModalOpen = (book) => {dispatch(selectedBook(book));};
+
+    const handleDelete = (book) => {dispatch(deleteBook(book))};
 
     return (
       <div className="book-list-item" key={id}>
@@ -27,7 +29,7 @@ const BookListItem = () => {
             <div className="category">{category}</div>
           </div>
 
-          <button className="delete">Delete</button>
+          <button className="delete" onClick={() => handleDelete(book.id)}>Delete</button>
         </div>
       </div>
     );

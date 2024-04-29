@@ -1,4 +1,3 @@
-import { selectedBook } from "../actions/bookActions";
 import { ActionTypes } from "../constants/action-types";
 
 const initialState = {
@@ -45,6 +44,12 @@ export const bookReducer = (state = initialState, {type, payload}) => {
 
         // Update the selectedBook with the edited book
         selectedBook: payload
+      };
+    
+    case ActionTypes.DELETE_BOOK:
+      return {
+        ...state,
+        books: state.books.filter((book) => book.id !== payload),
       };
 
     default:

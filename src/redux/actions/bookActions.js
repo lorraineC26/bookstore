@@ -1,3 +1,4 @@
+import { type } from "@testing-library/user-event/dist/type";
 import { ActionTypes } from "../constants/action-types";
 
 export const setBookData = (book) => {
@@ -25,6 +26,13 @@ export const editSelectedBook = (editBook) => {
   return {
     type: ActionTypes.EDIT_SELECTED_BOOK,
     payload: editBook,
+  };
+}
+
+export const deleteBook = (bookID) => {
+  return {
+    type: ActionTypes.DELETE_BOOK,
+    payload: bookID,
   };
 }
 
