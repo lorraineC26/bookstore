@@ -16,6 +16,10 @@ const AddBookModal = () => {
 
   const dispatch = useDispatch();
 
+  const handleClickClose = () => {
+    dispatch(closeAddBookModal());
+  };
+
   const handleAddBook = (e) => {
     e.preventDefault();
 
@@ -34,11 +38,10 @@ const AddBookModal = () => {
     setPrice("");
     setCategory("");
     setDescription("");
-  };
 
-  const handleClickClose = () => {
-    dispatch(closeAddBookModal());
-  }
+    // Close popup when submit the form
+    handleClickClose();
+  };
 
 
 
